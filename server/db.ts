@@ -7,13 +7,7 @@ declare global {
 
 let db: PrismaClient;
 
-if (process.env.NODE_ENV === 'production') {
-  db = new PrismaClient();
-} else {
-  if (!global.__db__) {
-    global.__db__ = new PrismaClient();
-  }
-  db = global.__db__;
-}
+// Always create a fresh client to avoid caching issues
+db = new PrismaClient();
 
 export { db };
