@@ -151,6 +151,8 @@ cantina-mariachi/
 
 ## 🍽️ Menu Categories
 
+The application includes a comprehensive menu with:
+
 - **Appetizers**: Nachos, Guacamole, Jalapeño Poppers
 - **Tacos**: Carnitas, Chicken Tinga, Vegetarian options
 - **Fajitas**: Chicken, Beef, Shrimp, Mixed, Vegetable
@@ -164,53 +166,67 @@ cantina-mariachi/
 ## 🔧 API Endpoints
 
 ### Menu
-- `GET /api/menu`
-- `GET /api/menu/category/:id`
-- `GET /api/menu/specials`
+- `GET /api/menu` - Get all categories with items
+- `GET /api/menu/category/:id` - Get items by category
+- `GET /api/menu/specials` - Get weekend specials
 
 ### Orders
-- `POST /api/orders`
-- `GET /api/orders/:orderNumber`
-- `PATCH /api/orders/:orderNumber/status`
+- `POST /api/orders` - Create new order
+- `GET /api/orders/:orderNumber` - Get order details
+- `PATCH /api/orders/:orderNumber/status` - Update order status
 
 ### Reservations
-- `POST /api/reservations`
-- `GET /api/reservations/availability/:date`
+- `POST /api/reservations` - Create reservation
+- `GET /api/reservations/availability/:date` - Check availability
 
 ### Contact & Newsletter
-- `POST /api/contact`
-- `POST /api/newsletter/subscribe`
+- `POST /api/contact` - Send contact message
+- `POST /api/newsletter/subscribe` - Subscribe to newsletter
 
 ## 🚀 Deployment
 
+### Production Build
 ```bash
 npm run build
 npm start
 ```
 
+### Environment Variables for Production
+Update your `.env` file with production values:
+- Set `NODE_ENV=production`
+- Update `DATABASE_URL` to production database
+- Configure email settings
+- Set proper CORS origins in `server/app.ts`
+
+### Recommended Hosting
+- **Frontend & Backend**: Railway, Render, or DigitalOcean
+- **Database**: Railway PostgreSQL, Supabase, or AWS RDS
+- **Domain**: Configure DNS to point to your hosting provider
+
 ## 🔐 Security Features
 
-- Helmet.js
-- CORS
-- Input Validation
-- Rate Limiting
-- Environment Variables
+- **Helmet.js**: Security headers
+- **CORS**: Cross-origin request protection  
+- **Input Validation**: Form validation and sanitization
+- **Rate Limiting**: API endpoint protection
+- **Environment Variables**: Sensitive data protection
 
 ## 📱 Mobile Responsiveness
 
-- Mobile-first design
-- Touch-friendly nav
-- Optimized images
-- Responsive typography
+The website is fully responsive with:
+- Mobile-first design approach
+- Touch-friendly navigation
+- Optimized images and loading
+- Responsive typography and spacing
 - Mobile-optimized forms and CTAs
 
 ## 🌟 SEO Optimization
 
-- Meta Tags
-- Structured Data
-- Semantic HTML
-- Alt Text
-- Open Graph
+- **Meta Tags**: Comprehensive meta descriptions and titles
+- **Structured Data**: Restaurant schema markup
+- **Semantic HTML**: Proper heading hierarchy
+- **Alt Text**: Image accessibility
+- **Open Graph**: Social media sharing optimization
 
 ## 📧 Contact Information
 
